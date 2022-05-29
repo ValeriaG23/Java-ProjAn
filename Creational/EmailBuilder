@@ -1,0 +1,29 @@
+public class EmailBuilder {
+    public static void main(String[] args) {
+    EmailConfig.EmailBuiler emailBuiler = new EmailConfig.EmailBuiler("valeriag@gmail.com")
+            .withFrom("gvaleria@gmail.com")
+            .withSubject("Antrenamentul")
+            .withAttach("Gasiti atasat documentul cu planul antrenamentelor")
+            .withMessage("Planificat cu succes");
+
+    EmailConfig emailConfig = emailBuiler.build();
+    System.out.println(emailConfig);
+
+        EmailConfig.EmailBuiler emailBuiler1 =new EmailConfig.EmailBuiler("alexgore@gmail.com");
+        EmailConfig.EmailBuiler emailBuiler2= emailBuiler1.withFrom("olgaol@gmail.com");
+        EmailConfig.EmailBuiler emailBuiler3 =emailBuiler2.withSubject("Creational.Singleton.Abonament").withMessage("prelungit cu succes");
+        EmailConfig email2=emailBuiler3.build();
+        System.out.println(email2);
+
+        EmailConfig emailConfig4 = new EmailConfig.EmailBuiler("alexgore@gmail.com").build();
+        System.out.println(emailConfig4);
+
+        EmailConfig emailConfig5 = new EmailConfig.EmailBuiler("alexgore@gmail.com")
+                .withFrom("olgaol@gmail.com")
+                .withSubject("Creational.Singleton.Abonament")
+                .withAttach("Gasiti atasat documentul cu planul antrenamentelor")
+                .withMessage("Prelungit cu succes")
+                .build();
+                System.out.println(emailConfig5);
+    }
+}
