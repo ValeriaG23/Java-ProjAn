@@ -1,0 +1,15 @@
+public class CurentAbonament {
+    private int timp;
+    private int pret;
+    private int nr_de_beneficiari;
+
+    public void update(int timp, int pret){
+        this.timp = timp;
+        this.pret = pret;
+        this.nr_de_beneficiari = nr_de_beneficiari;
+        display();
+    }
+    public void display(){
+        System.out.println("\n Timpul curent de antrenament este: \n" + timp +"\n Pretul abonamentului curent: "+pret +"\n Numarul beneficiarilor de acest abonament: 20 " +nr_de_beneficiari);
+    }
+}
