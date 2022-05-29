@@ -1,0 +1,10 @@
+public class AntrenorFitness extends Antrenor{
+    public AntrenorFitness(int alegere){
+    this.alegere = alegere;
+}
+
+    @Override
+    protected void write(String mesaj) {
+        System.out.println("Antrenor fitness a fost găsit cu succes" + mesaj);
+    }
+}
