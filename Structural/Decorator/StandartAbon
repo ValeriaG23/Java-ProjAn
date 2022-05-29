@@ -1,0 +1,14 @@
+public class StandartAbon extends AppDecorator{
+    public StandartAbon(Abon newAbon) {
+        super(newAbon);
+    }
+
+    public String buyAbonament() {
+        return super.buyAbonament() +"profita de abonament la pret standart";
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return super.AbonamentPrice();
+    }
+}
