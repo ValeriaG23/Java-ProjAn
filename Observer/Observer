@@ -1,0 +1,10 @@
+public class Observer {
+    public static void main(String args[])
+    {
+        CurentAbonament curentAbonament = new CurentAbonament();
+        AbonamentMajorat abonamentMajorat = new AbonamentMajorat();
+
+        AbonamentObserver abonamentObserver = new AbonamentObserver(curentAbonament, abonamentMajorat);
+        abonamentObserver.dateModif();
+    }
+}
