@@ -1,0 +1,99 @@
+enum TipAparateFitnes{
+    Aparate_Cardio, Aparate_Bazate_Pe_Rezistenta
+}
+enum Aparate_Cardio{
+    Banda_de_alergat, Aparat_de_vaslit,Bicicleta_eliptica, Bicicleta_Verticala, Bicicleta_recumbent
+}
+enum Aparate_Bazate_Pe_Rezistenta{
+    Presa_pentru_picioare, Hack_squat, Aparat_pentru_extensii_picioare, Aparat_pentru_Abductori, Presa_pentru_piept,Aparat_pentru_Pilates
+}
+
+abstract class AparateFitness
+{
+    AparateFitness(TipAparateFitnes tipAparateFitnes, Brand brand){
+        this.tip = tip;
+        this.brand = brand;
+    }
+    abstract void construct();
+    TipAparateFitnes tip = null;
+    Brand brand = null;
+
+    TipAparateFitnes getType()
+    {
+        return tip;
+    }
+    void setType(TipAparateFitnes tip)
+    {
+        this.tip = tip;
+    }
+    Brand getBrand()
+    {
+        return brand;
+    }
+    void setBrand(Brand brand)
+    {
+        this.brand = brand;
+    }
+    @Override
+    public String toString()
+    {
+        return "Brandul de aparate  -" +brand + " pregătit spre utilizare";
+    }
+
+}
+class AparatCardio extends AparateFitness
+{
+    AparatCardio(Brand brand)
+    {
+        super( TipAparateFitnes.Aparate_Cardio,brand);
+        construct();
+    }
+    @Override
+    protected void construct() {
+        System.out.println("Analiza aparatelor cardio");
+    }
+}
+class AparatRezistenta extends AparateFitness
+{
+    AparatRezistenta( Brand brand)
+    {
+        super( TipAparateFitnes.Aparate_Bazate_Pe_Rezistenta,brand);
+        construct();
+    }
+    @Override
+    protected void construct() {
+        System.out.println("Analiza aparatelor bazate pe rezistenta");
+    }
+}
+enum Brand{
+    Precor, Sport_Mag, Decathlon, FitLife
+}
+class BrandAparate
+{
+    static AparateFitness buildAparateFitness(TipAparateFitnes tip)
+    {
+        AparateFitness aparateFitness = null;
+        switch (tip)
+        {
+            case Aparate_Cardio:
+                aparateFitness = new AparatCardio(Brand.Precor);
+                break;
+            case Aparate_Bazate_Pe_Rezistenta:
+                aparateFitness = new AparatRezistenta(Brand.Decathlon);
+                break;
+            default:
+                break;
+        }
+
+        return aparateFitness;
+    }
+}
+
+class AbstractDesign
+{
+    public static void main(String[] args)
+    {
+        System.out.println(BrandAparate.buildAparateFitness(TipAparateFitnes.Aparate_Cardio));
+        System.out.println(BrandAparate.buildAparateFitness(TipAparateFitnes.Aparate_Bazate_Pe_Rezistenta));
+    }
+}
