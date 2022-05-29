@@ -1,0 +1,48 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class DecorTest {
+    public static void main (String [] args) throws NumberFormatException, IOException{
+        int alegere;
+        do {
+            System.out.print("Abonamente \n");
+            System.out.print("Standart Abonament \n");
+            System.out.print("Premium Abonament \n");
+            System.out.print("Student Abonament \n");
+            System.out.print("50+ Abonament \n");
+            System.out.print("Exit \n");
+            BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+            alegere = Integer.parseInt(br.readLine());
+            switch(alegere){
+                case 1 -> {
+                    App abon1 = new App() ;
+                        System.out.println(abon1.buyAbonament());
+                        System.out.println(abon1.AbonamentPrice());
+                    }
+                case 2 -> {
+                    StandartAbon abon2 = new StandartAbon(new App());
+                    System.out.println(abon2.buyAbonament());
+                    System.out.println(abon2.AbonamentPrice());
+                }
+                case 3 -> {
+                    PremiumAbon abon3 = new PremiumAbon(new App());
+                    System.out.println(abon3.buyAbonament());
+                    System.out.println(abon3.AbonamentPrice());
+                }
+                case 4 -> {
+                    StudentAbon abon4 = new StudentAbon(new App());
+                    System.out.println(abon4.buyAbonament());
+                    System.out.println(abon4.AbonamentPrice());
+                }
+                case 5 -> {
+                    CincizeciPlusAbon abon5 = new CincizeciPlusAbon(new App());
+                    System.out.println(abon5.buyAbonament());
+                    System.out.println(abon5.AbonamentPrice());
+                }
+                default ->{
+                    System.out.println("Alte alegeri sunt indisponibile momentan");
+                }
+            }
+        }  while(true);
+    }
+}
