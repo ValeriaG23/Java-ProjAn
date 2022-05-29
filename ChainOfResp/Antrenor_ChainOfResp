@@ -1,0 +1,19 @@
+public class Antrenor_ChainOfResp {
+    private static Antrenor getChainAntrenor(){
+        Antrenor cardio = new CardioAntrenor(Antrenor.Cardio);
+        Antrenor greutati = new AntrenorGreutati(Antrenor.Greutati);
+        Antrenor fitness = new AntrenorFitness(Antrenor.Fitness);
+
+        cardio.setNextAntrenor(fitness);
+        fitness.setNextAntrenor(greutati);
+
+        return cardio;
+    }
+    public static void main(String[] args){
+        Antrenor antrenorSir = getChainAntrenor();
+        antrenorSir.Mesaj(Antrenor.Cardio, " Vă dorim un antrenament productiv!");
+        antrenorSir.Mesaj(Antrenor.Greutati, " Vă dorim un antrenament productiv!");
+        antrenorSir.Mesaj(Antrenor.Fitness, " Vă dorim un antrenament productiv!");
+
+    }
+}
