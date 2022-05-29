@@ -1,0 +1,13 @@
+public class StudentAbon extends AppDecorator{
+    public StudentAbon(Abon newAbon) {
+        super(newAbon);
+    }
+    public String buyAbonament() {
+        return super.buyAbonament() +"profita de super oferta pentru studenti";
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return super.AbonamentPrice() - 50.0;
+    }
+}
