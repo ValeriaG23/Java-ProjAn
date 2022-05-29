@@ -1,0 +1,14 @@
+public class AbonamentMajorat {
+    private float timp;
+    private int pret;
+    private int nr_de_beneficiari;
+
+    public void update(int abonament, int pret){
+        this.timp = (float)(pret/2);
+        this.pret = (int)(this.timp * 5.5);
+        display();
+    }
+    public void display(){
+        System.out.println("\n Timpul modificat este: \n" + timp +"\n Pretul abonamentului modificat: 155 "+pret +"\n Numarul beneficiarilor de acest abonament: 20 " +nr_de_beneficiari);
+    }
+}
