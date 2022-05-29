@@ -1,0 +1,61 @@
+package Creational.Builder;
+
+public class EmailConfig {
+    private String de_la;
+    private String catre;
+    private String subiect;
+    private String mesaj;
+    private Object body;
+
+    private EmailConfig(String de_la, String catre, String subiect, String mesaj, Object body){
+        this.de_la=de_la;
+        this.catre=catre;
+        this.subiect=subiect;
+        this.mesaj=mesaj;
+        this.body=body;
+    }
+    @Override
+    public String toString() {
+        return "Email{" +
+                "de la='" + de_la + '\'' +
+                ", catre='" + catre + '\'' +
+                ", subiect='" + subiect + '\'' +
+                ", mesaj='" + mesaj + '\'' +
+                ", corpul emailului=" + body +
+                '}';
+    }
+    public static class EmailBuiler{
+        private String de_la;
+        private String catre;
+        private String subiect;
+        private String mesaj;
+        private Object body;
+
+        public EmailBuiler(String catre){
+            this.catre=catre;
+        }
+        public EmailBuiler withFrom(String de_la){
+            this.de_la=de_la;
+            return this;
+        }
+        public EmailBuiler withSubject(String subiect){
+            this.subiect=subiect;
+            return  this;
+        }
+        public EmailBuiler withMessage(String mesaj){
+            this.mesaj=mesaj;
+            return this;
+        }
+        public EmailBuiler withAttach(Object body){
+            this.body=body;
+            return this;
+        }
+
+        public EmailConfig build(){
+            return new EmailConfig (this.de_la, this.catre, this.subiect, this.mesaj, this.body);
+
+        }
+    }
+
+
+}
