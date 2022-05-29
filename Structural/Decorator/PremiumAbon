@@ -1,0 +1,13 @@
+public class PremiumAbon extends AppDecorator{
+    public PremiumAbon(Abon newAbon) {
+        super(newAbon);
+    }
+    public String buyAbonament() {
+        return super.buyAbonament() +"profita de 5 zile pe saptamana in loc de 2";
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return super.AbonamentPrice() +50.0;
+    }
+}
