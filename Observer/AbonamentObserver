@@ -1,0 +1,26 @@
+package Behavioral.Observer.Observer;
+
+public class AbonamentObserver {
+    int pretcurent, pretmodificat;
+    CurentAbonament curentAbona;
+    AbonamentMajorat abonamentMajorat;
+
+    public AbonamentObserver(CurentAbonament curentAbona, AbonamentMajorat abonamentMajorat){
+        this.curentAbona = curentAbona;
+        this.abonamentMajorat = abonamentMajorat;
+    }
+    private int getPretcurent(){
+        return 150;
+    }
+    private int getPretmodificat(){
+        return 165;
+    }
+
+    public void dateModif(){
+        pretcurent=getPretcurent();
+        pretmodificat = getPretmodificat();
+
+        curentAbona.update(pretcurent, pretmodificat);
+        abonamentMajorat.update(pretcurent, pretmodificat);
+    }
+}
