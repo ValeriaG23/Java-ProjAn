@@ -1,0 +1,9 @@
+public class AntrenorGreutati extends Antrenor{
+    public AntrenorGreutati(int alegere){
+        this.alegere = alegere;
+    }
+
+    @Override
+    protected void write(String mesaj) {
+        System.out.println("Antrenor greutati a fost  găsit cu succes" + mesaj);
+    }
