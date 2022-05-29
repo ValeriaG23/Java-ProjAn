@@ -1,0 +1,10 @@
+public class CardioAntrenor extends Antrenor{
+    public CardioAntrenor(int alegere){
+        this.alegere = alegere;
+    }
+
+    @Override
+    protected void write(String mesaj) {
+        System.out.println("Antrenor cardio a fost găsit cu succes" + mesaj);
+    }
+}
