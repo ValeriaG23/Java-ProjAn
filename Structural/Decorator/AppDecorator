@@ -1,0 +1,15 @@
+public class AppDecorator implements Abon{
+   private Abon newAbon;
+   public AppDecorator(Abon newAbon){
+       this.newAbon=newAbon;
+   }
+    @Override
+    public String buyAbonament() {
+        return newAbon.buyAbonament();
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return newAbon.AbonamentPrice();
+    }
+}
