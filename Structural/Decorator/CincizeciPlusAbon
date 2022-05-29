@@ -1,0 +1,13 @@
+public class CincizeciPlusAbon extends AppDecorator{
+    public CincizeciPlusAbon(Abon newAbon) {
+        super(newAbon);
+    }
+    public String buyAbonament() {
+        return super.buyAbonament() +"antrenor gratuit prima luna";
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return super.AbonamentPrice() - 10.0;
+    }
+}
