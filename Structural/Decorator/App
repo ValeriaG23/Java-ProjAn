@@ -1,0 +1,11 @@
+public class App implements Abon{
+    @Override
+    public String buyAbonament() {
+        return "Abonament";
+    }
+
+    @Override
+    public double AbonamentPrice() {
+        return 150.0;
+    }
+}
