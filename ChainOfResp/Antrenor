@@ -1,0 +1,23 @@
+
+public abstract class Antrenor {
+    public static int Cardio = 1;
+    public static int Greutati = 2;
+    public static int Fitness = 3;
+
+    protected int alegere;
+    protected Antrenor nextAntrenor;
+    public void setNextAntrenor(Antrenor nextAntrenor){
+        this.nextAntrenor = nextAntrenor;
+    }
+    public void Mesaj(int alegere, String mesaj){
+        if(this.alegere <=alegere){
+            write(mesaj);
+        }
+        if(nextAntrenor!=null){
+            nextAntrenor.Mesaj(alegere, mesaj);
+        }
+    }
+
+    protected abstract void write(String message);
+
+}
