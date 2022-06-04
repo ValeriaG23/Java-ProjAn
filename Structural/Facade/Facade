@@ -1,0 +1,9 @@
+package Structural.Facade.Facade;
+
+public class Facade {
+    public static void main(String[] args){
+        ContUtilizator contUtilizator = new ContUtilizator(600);
+        XTZInterface xtz = new XTZ(contUtilizator);
+        xtz.checkIn(1);
+    }
+}
