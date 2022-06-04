@@ -1,0 +1,9 @@
+package Structural.Facade.Facade;
+
+public class CheckValidare {
+    public int validate(int dateAntrenament, int nExercitii){
+        if(dateAntrenament<nExercitii) return 0;
+        else if(dateAntrenament-nExercitii <10) return 1;
+        return 2;
+    }
+}
