@@ -1,0 +1,8 @@
+package Structural.Facade.Facade;
+
+public abstract class XTZInterface {
+    void checkIn(String numberAntrenaments){
+
+    }
+    public abstract void checkIn(int numberAntrenaments);
+}
