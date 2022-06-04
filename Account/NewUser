@@ -1,0 +1,12 @@
+package Account;
+import javax.swing.*;
+import java.awt.*;
+public class NewUser extends JFrame  {
+    NewUser()
+    {
+        setDefaultCloseOperation(javax.swing.
+                WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bine ati venit! Suntem fericiți să vă vedem alături de noi! ");
+        setSize(400, 200);
+    }
+}
